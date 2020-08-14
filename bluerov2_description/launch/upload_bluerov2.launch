@@ -28,8 +28,10 @@
                     debug:=$(arg debug)
                     namespace:=$(arg namespace)" />
 
-                    <!-- use_simplified_mesh:=$(arg use_simplified_mesh) -->
-                    <!-- inertial_reference_frame:=world_ned -->
+
+
+        <!-- use_simplified_mesh:=$(arg use_simplified_mesh) -->
+        <!-- inertial_reference_frame:=world_ned -->
 
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
@@ -44,7 +46,7 @@
   </group>
 
   <!-- Publish state and tf for in relation to the world frame -->
-  <include file="$(find uuv_descriptions)/models/common/launch/message_to_tf.launch">
+  <include file="$(find uuv_descriptions)/launch/message_to_tf.launch">
     	<arg name="namespace" value="$(arg namespace)"/>
   </include>
 
